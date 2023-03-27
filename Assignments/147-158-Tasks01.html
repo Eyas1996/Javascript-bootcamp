@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP Tasks</title>
+  </head>
+  <body>
+    <script>
+      // Task 01
+      // You have the following Constructor Function that needs to be converted to Class Syntax
+      // Don't rely on software and do it yourself to make sure you know Syntax
+      // Add two Methods, one named run and one named stop
+      // Each of them contains a message
+      // The first, Car Is Running Now, and the second, Car Is Stopped
+      // Create three cars with this class with whatever data you choose
+      // Print the data of the first car of them in the console as shown below
+      // In the next line, print the Method named run
+
+      class Car {
+        constructor(name, model, price) {
+          this.n = name;
+          this.m = model;
+          this.p = price;
+        }
+        run() {
+          return `Car Is Running Now`;
+        }
+        stop() {
+          return `Car Is Stopped`;
+        }
+      }
+      let carOne = new Car("MG", 2022, 420000);
+      let carTwo = new Car("BM", 2023, 750000);
+      let carThree = new Car("RR", 2018, 130000);
+
+      console.log(`Car One Name Is ${carOne.n} And Model Is ${carOne.m} And Price Is ${carOne.p}`);
+      console.log(carOne.run());
+
+      console.log(`Car Two Name Is ${carTwo.n} And Model Is ${carTwo.m} And Price Is ${carTwo.p}`);
+      console.log(carTwo.stop());
+
+      console.log(`Car Three Name Is ${carThree.n} And Model Is ${carThree.m} And Price Is ${carThree.p}`);
+      console.log(carThree.run());
+
+      // Needed Output
+      // ("Car One Name Is MG And Model Is 2022 And Price Is 420000");
+      // ("Car Is Running Now");
+      
+    </script>
+  </body>
+</html>

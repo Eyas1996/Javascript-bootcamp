@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>094-101 Tasks</title>
+</head>
+
+<body>
+  <div class="our-element">Our Element</div>
+  <p>Paragraph</p>
+
+
+</body>
+
+<script>
+    // You have two elements on the page which are Div and Paragraph
+    // It is required to completely remove the paragraph from the page
+    // As for the div, it is required to put an element before it and an element after it, which is required in the example below
+
+  // required structure
+
+  // <div class="start" title="Start Element" data-value="Start">Start</div>
+  // <div class="our-element">Our Element</div>
+  // <div class="end" title="End Element" data-value="End">End</div>
+
+  let myDiv = document.querySelector(".our-element");
+  let myP = document.querySelector("p");
+
+  myP.remove();
+
+  // Create Div Before myDiv
+  let start = document.createElement("div");
+  start.className = "start";
+  start.title ="Start Element";
+  start.setAttribute("data-value", "Start");
+  start.textContent = "Start";
+  myDiv.before(start);
+  
+// Create Div after myDiv
+  let end = document.createElement("div");
+  end.className = "end";
+  end.title ="End Element";
+  end.setAttribute("data-value", "End");
+  end.textContent = "End";
+  myDiv.after(end);
+
+
+console.log(start);
+console.log(myDiv);
+console.log(end);
+</script>
+
+</html>

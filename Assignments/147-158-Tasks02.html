@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP Tasks</title>
+  </head>
+  <body>
+    <script>
+      // Task 02
+      // We have the next class called Phone
+      // We need to create another class named Tablet that inherits the properties of the Phone class
+      // The Class of the Tablet contains the Property increment, which is the size
+      // It also contains a Method called fullDetails
+      // We used the class called Tablet to create more than one Tablet
+      // We then used the method called fullDetails, which prints data about the tablet
+      // Now all you have to do is create the Tablet Class so that the data appears as shown below
+      // If the person does not type the size, the word Unknown should appear
+
+      class Phone {
+        constructor(name, serial, price) {
+          this.name = name;
+          this.serial = serial;
+          this.price = price;
+        }
+      }
+
+      // Write Tablet Class Here
+      class Tablet extends Phone {
+        constructor(name, serial, price, size) {
+          super(name, serial, price);
+          this.size = size || "Unknown";
+        }
+        fullDetails() {
+          return `${this.name} Serial is ${this.serial} And Size Is ${this.size}`;
+        }
+      }
+
+      let TabletOne = new Tablet("iPad", 100200300, 1500, 12.9);
+      let TabletTwo = new Tablet("Nokia", 350450650, 800, 10.5);
+      let TabletThree = new Tablet("LG", 250450650, 650);
+
+      console.log(`${TabletOne.fullDetails()}`);
+      // iPad Serial is 100200300 And Size Is 12.9
+
+      console.log(`${TabletTwo.fullDetails()}`);
+      // Nokia Serial is 350450650 And Size Is 10.5
+
+      console.log(`${TabletThree.fullDetails()}`);
+      // LG Serial is 250450650 And Size Is Unknown
+    </script>
+  </body>
+</html>

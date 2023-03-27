@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP Tasks</title>
+  </head>
+  <body>
+    <script>
+      // Task 03 Challenge
+      // You have the following class named User
+      // We need to modify it as you want to do what is required below
+      // First, block access to the Card Property directly
+      // When creating users, you notice that each person wrote the Card Number in a different way
+      // We need all numbers to be a String and after every 4 numbers a sign - as in the Output
+      // User creation lines and console lines must not be modified
+
+      // **Hint**
+      // You can search for Getters to get the value of the Method as a Property
+      // You can use the RegExp to convert the number to the credit card format
+
+      // Edit The Class
+      class User {
+        #c;
+        constructor(username, card) {
+          this.u = username;
+          this.#c = card;
+        }
+        creditCard() {
+          return this.#c.toString().match(/\d{4}/g).join("-");
+        }
+        get showData() {
+          return `Hello ${this.u} Your Credit Card Is ${this.creditCard()}`;
+        }
+      }
+
+      // Do Not Edit Anything Below
+
+      let userOne = new User("Osama", "1234-5678-1234-5678");
+      let userTwo = new User("Ahmed", "1234567812345678");
+      let userThree = new User("Ghareeb", 1234567812345678);
+
+      console.log(userOne.showData);
+      // Hello Osama Your Credit Card Number Is 1234-5678-1234-5678
+
+      console.log(userTwo.showData);
+      // Hello Ahmed Your Credit Card Number Is 1234-5678-1234-5678
+
+      console.log(userThree.showData);
+      // Hello Ghareeb Your Credit Card Number Is 1234-5678-1234-5678
+
+      console.log(userOne.c); // Prevent Accessing To Card Property Here
+      // Undefined
+    </script>
+  </body>
+</html>
